@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import productApi from "./apis/testApi";
+import './assets/css/custom.css';
+import routerConfig from "./core/routerConfig";
+import HomeLayOut from './LayOut/HomeLayOut';
+import ROUTES from "./routers/routers";
 
 function App() {
+  const history = useHistory();
+
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const productList = await productApi.getAll();
+      } catch (error) {
+        console.log(error)
+
+      }
+    };
+    fetchProducts();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          fdrr
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+    <>
+
+      {routerConfig(ROUTES)}
+
+    </>
+
+
+
   );
 }
 
