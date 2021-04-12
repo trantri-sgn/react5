@@ -1,14 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './index.css';
+import { BrowserRouter as Router } from "react-router-dom";
 import App from './App';
+import './index.css';
 import reportWebVitals from './reportWebVitals';
+import AppProvider from './core/AppProvider';
+import reducers from './redux/reducers'
+import mySaga from './redux/saga'
+
 
 ReactDOM.render(
-  <Router>
-    <App />
-  </Router>,
+  <AppProvider reducers={reducers} saga={mySaga}>
+    <Router>
+      <App />
+    </Router>
+  </AppProvider>,
+
   document.getElementById('root')
 );
 

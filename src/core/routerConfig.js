@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 export default function routerConfig(routers) {
-  console.log(routers);
   return (
     <Switch>
       {routers.map((e) => {
@@ -13,6 +12,7 @@ export default function routerConfig(routers) {
         }
         return (
           <Route
+            key={Component}
             exact={exact}
             path={path}
             component={(...prop) => (

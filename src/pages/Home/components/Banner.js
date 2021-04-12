@@ -11,7 +11,7 @@ export default function Banner() {
                 </div>
             </div>
             <div className="jarallax-img">
-                <img data-src="img/bg-cover.jpg" alt="" className="lazyload" />
+                <img data-src="images/bg-cover.jpg" alt="" className="lazyload" />
                 <div className="video-bg lazyload" data-src="video/CFD-video-bg2.mp4" />
             </div>
         </div>
