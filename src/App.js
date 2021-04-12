@@ -11,8 +11,8 @@ function App() {
 
 
     <>
-      {routerConfig(ROUTES)}
-
+      {/* {routerConfig(ROUTES)} */}
+tri
     </>
 
 
